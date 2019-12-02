@@ -4,11 +4,12 @@
 
 Machine Learning is known as the study of algorithms and statistical method that a computing system can use to perform task specific to application without using any instructions, solely relying on patterns and inference. In this module we will learn and understand some of the different methods available in sci-kit learn library. We will focus mainly on classfication methods with some overview of clustering methods.
 
-For demonstrating the appliaction of different methods we will use data set available on [Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Letter+Recognition) by UCI. 
-
-What is the scientitifc goal?  What would you do if you had all the data?  What do you want to predict or estimate?  Why is this relevant to ABE researchers or the field?  Provide some background on the rationale and relevance.
+For demonstrating the appliaction of different methods we will use a data set available on [Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Letter+Recognition) by UCI. 
 
 ### Data description
+
+The objective is to identify one of the 26 capital letters in the English alphabet. The alphabet character images were based on 20 different fonts and each letter within these 20 fonts was randomly distorted to produce a file of 20,000 unique stimuli. Each stimulus was converted into 16 primitive numerical attributes (statistical moments and edge counts) which were then scaled to fit into a range of integer values from 0 through 15. 
+[See the article cited above for more details.](https://link.springer.com/article/10.1007/BF00114162)
 
 What kind of data is avialble?  How is your data collected?  Are there any concerns about the data?  Which data is the most relevant?  Is the data easy to acccess? Will the data change over time?  What needs to be done to the data to get it ready for any downstream analysis?
 
