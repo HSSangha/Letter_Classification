@@ -20,6 +20,9 @@ We will follow the given workflow for our module:
 
 ## Explore the data
 
+```python
+data = pd.read_csv('dataset_6_letter.csv', index_col=False)
+```
 Demonstrate what you would do to describe the data and if it has any patterns or anomolies.  Make some plots.
 
 ### Model the data
