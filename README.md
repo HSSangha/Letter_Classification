@@ -1,4 +1,4 @@
-## Making class Project Website for ABE-516x
+## Letter Classification using different Machine Learning methods
 
 ### Configuration variables
 
