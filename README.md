@@ -16,7 +16,7 @@ The objective is to identify one of the 26 capital letters in the English alphab
 
 We will follow the given workflow for our module:
 
-
+![yipeeee](https://github.com/HSSangha/Letter_Classification/blob/master/Letter%20Identification.jpeg)
 
 ## Explore the data
 
