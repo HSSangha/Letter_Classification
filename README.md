@@ -81,7 +81,53 @@ x = x.drop(columns=['high','onpix'])
 
 ## Model the data
 
-Build a model, fit the model, validate the model.
+Before training any model we split the dataset into train and test dataset using sklearn.
+
+```python
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size = 0.3, random_state = 42)
+```
+
+Now we explore some of the classifiers available on sklearn library.
+
+### Stochastic Gradient Decent Classifier
+
+The class SGDClassifier implements a plain stochastic gradient descent learning routine which supports different loss functions and penalties for classification.
+
+```python
+from sklearn.linear_model import SGDClassifier
+
+SGD = SGDClassifier(alpha=0.0001, max_iter=2000, tol=1e-3).fit(X_train, Y_train)
+```
+
+We predict labels for test set and then compare them to original labels and get an accuracy score and a confusion matrix.
+
+```python
+Y_hat = SGD.predict(X_test)
+
+from sklearn.metrics import confusion_matrix
+
+plt.figure(figsize=(10,10))
+mat = confusion_matrix(Y_hat, Y_test)
+sns.heatmap(mat.T, square=False, annot=True, fmt='d',cbar=False)
+plt.xlabel('true label')
+plt.ylabel('predicted label')
+
+from sklearn.metrics import accuracy_score
+
+accuracy_score(Y_hat, Y_test)
+out[]: 0.5033333333333333
+```
+
+We get the following output:
+
+![Link not found](https://raw.githubusercontent.com/HSSangha/Letter_Classification/master/con1.png)
+
+We can see that the accuracy is quite low and same is visible from confusion matrix. Now let's check out other methods.
+
+### Support Vector Machine Classifier
+
 
 ## Communciate and visualize the results
 
