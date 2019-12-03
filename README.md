@@ -353,7 +353,7 @@ out[]: 0.30892857142857144
 
 ## What we learned
 
-We looked at different classification and clustering machine leaning algorithms. We leanred that 
+We looked at different classification and clustering machine leaning algorithms. We leanred that Classifcation algorithm are better performing to identify patterns in dataset. A reason for this is the availabity of labeled data. Clustering models becomes difficult to train as the model doesn't know if the clutering is assigning cluster properly. Another issue arises in Clustering model when number of clusters needed are not known. 
 
 ## Class Exercise
 
