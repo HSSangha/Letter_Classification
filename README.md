@@ -134,6 +134,36 @@ The advantages of support vector machines are:
   * Uses a subset of training points in the decision function (called support vectors), so it is also memory efficient.
   * Versatile: different Kernel functions can be specified for the decision function. Common kernels are provided, but it is also possible to specify custom kernels.
 
+The disadvantages of support vector machines include:
+  * If the number of features is much greater than the number of samples, avoid over-fitting in choosing Kernel functions and regularization term is crucial.
+  * SVMs do not directly provide probability estimates, these are calculated using an expensive five-fold cross-validation (see Scores and probabilities, below).
+  
+```python
+from sklearn import svm
+
+SVC = svm.SVC(gamma='scale')
+SVC.fit(X_train, Y_train) 
+```
+
+We predict labels for test set and then compare them to original labels and get an accuracy score and a confusion matrix.
+
+```python
+Y_hat1 = SVC.predict(X_test)
+
+plt.figure(figsize=(10,10))
+mat1 = confusion_matrix(Y_hat1, Y_test)
+sns.heatmap(mat1.T, square=False, annot=True, fmt='d',cbar=False)
+plt.xlabel('true label')
+plt.ylabel('predicted label')
+
+accuracy_score(Y_hat1, Y_test)
+out[]: 0.9115
+```
+We get the following output:
+
+![Link not found](https://raw.githubusercontent.com/HSSangha/Letter_Classification/master/con2.png)
+
+
 ## Communciate and visualize the results
 
 What did you learn and do the results make sense?  Revisit your initial question and answer it.  H
