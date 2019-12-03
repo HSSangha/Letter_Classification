@@ -1,6 +1,7 @@
 # Letter Classification using different Machine Learning methods
 
 author: Harman Singh Sangha
+
 date: 12/02/2019 
 
 ## What is Machine Learning?
