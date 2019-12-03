@@ -1,5 +1,8 @@
 # Letter Classification using different Machine Learning methods
 
+author: Harman Singh Sangha
+date: 12/02/2019 
+
 ## What is Machine Learning?
 
 Machine Learning is known as the study of algorithms and statistical method that a computing system can use to perform task specific to application without using any instructions, solely relying on patterns and inference. In this module we will learn and understand some of the different methods available in sci-kit learn library. We will focus mainly on classfication methods with some overview of clustering methods.
@@ -357,8 +360,4 @@ We looked at different classification and clustering machine leaning algorithms.
 
 ## Class Exercise
 
-In each project, I'd like to see a homework assignment that the class can do/evaluate to learn more about your data.  This should be a reproducible notebook that allows them to learn one or more aspects of your data workflow.  It is also an opportunity to share your research with your colleagues.
-
-Here is an example of a fantastic project website:
-
-https://stephenslab.github.io/ipynb-website/
+Please find the link for the [Guided Task](https://github.com/HSSangha/Letter_Classification/blob/master/Class_Exercise.ipynb)
