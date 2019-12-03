@@ -220,6 +220,137 @@ GBC = GradientBoostingClassifier(n_estimators=200, random_state=0)
 GBC.fit(X_train, Y_train)
 ```
 
+We predict labels for test set and then compare them to original labels and get an accuracy score and a confusion matrix.
+
+```python
+Y_hat3 = GBC.predict(X_test)
+
+plt.figure(figsize=(10,10))
+mat3 = confusion_matrix(Y_hat3, Y_test)
+sns.heatmap(mat3.T, square=False, annot=True, fmt='d',cbar=False)
+plt.xlabel('true label')
+plt.ylabel('predicted label')
+
+accuracy_score(Y_hat3, Y_test)
+out[]: 0.9406666666666667
+```
+
+![Link not found](https://raw.githubusercontent.com/HSSangha/Letter_Classification/master/con4.png)
+
+We saw that last 3 models worked pretty well for classification tasks. They are part of supervised learning in which we help the model to learn by providing target values we want and then check for a sample dataset.
+
+Now let's look at one method in which don't provide any help to the model. In other words, this is known as unsupervised learning. We will look at KMeans clustering method for unsupervised learning. 
+
+### KMeans Clustering
+
+The KMeans algorithm clusters data by trying to separate samples in n groups of equal variance, minimizing a criterion known as the inertia or within-cluster sum-of-squares (see below). This algorithm requires the number of clusters to be specified. It scales well to large number of samples and has been used across a large range of application areas in many different fields.
+
+```python
+from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=26, random_state=0)
+clusters = kmeans.fit_predict(X_train)
+```
+
+Now to check whether the classfication was successful we need to change the label to the matching cluster number. To check which number to be assigned to which label we do the following:
+
+```python
+Y_train = np.asarray(Y_train)
+
+import collections
+
+for i in range(26):
+    mask = (clusters == i)
+    print(collections.Counter(Y_train[mask]).keys())
+    print(collections.Counter(Y_train[mask]).values())
+```
+
+From the output we get from this we update the labels for our train data.
+
+```python
+for n, i in enumerate(Y_train):
+    if i == 'G':
+        Y_train[n] = 0
+    elif i == 'S':
+        Y_train[n] = 1
+    elif i == 'F':
+        Y_train[n] = 2
+    elif i == 'Q':
+        Y_train[n] = 3
+    elif i == 'R':
+        Y_train[n] = 4
+    elif i == 'I':
+        Y_train[n] = 5
+    elif i == 'Y':
+        Y_train[n] = 6
+    elif i == 'K':
+        Y_train[n] = 7
+    elif i == 'U':
+        Y_train[n] = 8
+    elif i == 'V':
+        Y_train[n] = 9
+    elif i == 'O':
+        Y_train[n] = 10
+    elif i == 'A':
+        Y_train[n] = 11
+    elif i == 'Z':
+        Y_train[n] = 12
+    elif i == 'L':
+        Y_train[n] = 13
+    elif i == 'W':
+        Y_train[n] = 14
+    elif i == 'M':
+        Y_train[n] = 15
+    elif i == 'H':
+        Y_train[n] = 16
+    elif i == 'X':
+        Y_train[n] = 17
+    elif i == 'B':
+        Y_train[n] = 18
+    elif i == 'D':
+        Y_train[n] = 19
+    elif i == 'J':
+        Y_train[n] = 20
+    elif i == 'C':
+        Y_train[n] = 21
+    elif i == 'N':
+        Y_train[n] = 22
+    elif i == 'E':
+        Y_train[n] = 23
+    elif i == 'P':
+        Y_train[n] = 24
+    else:
+        Y_train[n] = 25
+```
+
+Update the labels to the correct group:
+
+```python
+from scipy.stats import mode
+
+labels = np.zeros_like(clusters)
+for i in range(26):
+    mask = (clusters == i)
+    labels[mask] = mode(Y_train[mask])[0]
+```
+
+We calculate accuracy and create a confusion matrix for clustering task.
+
+```python
+Y_hat3 = GBC.predict(X_test)
+
+plt.figure(figsize=(10,10))
+mat3 = confusion_matrix(Y_hat3, Y_test)
+sns.heatmap(mat3.T, square=False, annot=True, fmt='d',cbar=False)
+plt.xlabel('true label')
+plt.ylabel('predicted label')
+
+accuracy_score(Y_hat3, Y_test)
+out[]: 0.30892857142857144
+```
+
+![Link not found](https://raw.githubusercontent.com/HSSangha/Letter_Classification/master/con5.png)
+
 ## Communciate and visualize the results
 
 What did you learn and do the results make sense?  Revisit your initial question and answer it.  H
