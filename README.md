@@ -351,11 +351,11 @@ out[]: 0.30892857142857144
 
 ![Link not found](https://raw.githubusercontent.com/HSSangha/Letter_Classification/master/con5.png)
 
-## Communciate and visualize the results
+## What we learned
 
-What did you learn and do the results make sense?  Revisit your initial question and answer it.  H
+We looked at different classification and clustering machine leaning algorithms. We leanred that 
 
-### Class Exercise
+## Class Exercise
 
 In each project, I'd like to see a homework assignment that the class can do/evaluate to learn more about your data.  This should be a reproducible notebook that allows them to learn one or more aspects of your data workflow.  It is also an opportunity to share your research with your colleagues.
 
