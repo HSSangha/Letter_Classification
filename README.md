@@ -163,6 +163,32 @@ We get the following output:
 
 ![Link not found](https://raw.githubusercontent.com/HSSangha/Letter_Classification/master/con2.png)
 
+### Nearest Neighbors Classification
+
+Neighbors-based classification is a type of instance-based learning or non-generalizing learning: it does not attempt to construct a general internal model, but simply stores instances of the training data. Classification is computed from a simple majority vote of the nearest neighbors of each point: a query point is assigned the data class which has the most representatives within the nearest neighbors of the point.
+
+```python
+from sklearn.neighbors import KNeighborsClassifier
+
+NNC = KNeighborsClassifier().fit(X_train, Y_train)
+```
+
+We predict labels for test set and then compare them to original labels and get an accuracy score and a confusion matrix.
+
+```python
+Y_hat2 = NNC.predict(X_test)
+
+plt.figure(figsize=(10,10))
+mat2 = confusion_matrix(Y_hat2, Y_test)
+sns.heatmap(mat2.T, square=False, annot=True, fmt='d',cbar=False)
+plt.xlabel('true label')
+plt.ylabel('predicted label')
+
+accuracy_score(Y_hat2, Y_test))
+out[]: 0.9453333333333334
+```
+
+![Link not found](https://raw.githubusercontent.com/HSSangha/Letter_Classification/master/con3.png)
 
 ## Communciate and visualize the results
 
